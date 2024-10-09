@@ -1,0 +1,35 @@
+<div>
+    <div class="flex flex-col gap-2 border-2 border-cyan-400 p-5 rounded-md justify-center">
+    <div class="flex gap-5">
+        <p class="w-40">Heading:</p>
+        <p>{{todo.heading}}</p>
+    </div>
+    <div class="flex gap-5">
+        <p class="w-40">Note:</p>
+        <p>{{todo.note}}</p>
+    </div>
+    <div class="flex gap-5">
+        <p class="w-40">Task Done:</p>
+        <div>
+        @if(todo.taskDone){
+            
+            <button (click)="todo.toggleDone()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" fill="lightgreen"/>
+                <polyline points="16 8 10 14 8 12" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+        }
+        @else {
+            <button (click)="todo.toggleDone()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" fill="lightcoral"/>
+                <line x1="16" y1="8" x2="8" y2="16" stroke="red" stroke-width="2" stroke-linecap="round"/>
+                <line x1="8" y1="8" x2="16" y2="16" stroke="red" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>              
+        }
+        </div>
+    </div>
+</div>
+</div>

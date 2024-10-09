@@ -1,0 +1,28 @@
+<div class="flex px-5 py-2 bg-cyan-400">
+  <div class="w-1/2 flex justify-center">
+      <button class="text-2xl" (click)="setNavItemsRender(true)">ToDo</button>
+  </div>
+  <div class="w-1/2 flex justify-center">
+      <button class="text-2xl" (click)="setNavItemsRender(false)">Add Tasks</button>
+  </div>
+</div>
+@if(navItemsRender){
+<div class="pt-10 grid grid-cols-1 gap-10">
+  @for (item of todoList; track $index) {
+  <app-todo-list [todo]="todoList[$index]" note="Find Brush"></app-todo-list>
+  }
+</div>
+}
+@else{
+  <div class="flex flex-col gap-3 pt-10 justify-center items-center">
+    <div>
+      <p>Heading:</p>
+      <input [(ngModel)]="headingInp" class="border-2 border-cyan-400 rounded-md w-[500px] h-14 px-5" type="text" />
+    </div>
+    <div>
+      <p>Notes:</p>
+      <input [(ngModel)]="notesInp" class="border-2 border-cyan-400 rounded-md w-[500px] h-14 px-5" type="text" />
+    </div>
+    <button class="border-2 border-cyan-400 px-2 rounded-md hover:bg-[#F0F0F0]" (click)="addTask()">Submit</button>
+  </div>
+}
