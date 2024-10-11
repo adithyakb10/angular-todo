@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: cascadia;
-    src: url("C:\\Users\\Exam\\Desktop\\Angular\\todo-1\\assets\\fonts\\CascadiaCode.ttf") format("truetype");
+  font-family: cascadia;
+  src: url("/home/adithya/Projects/web/Angular/angular-todo/assets/fonts/CascadiaCode.ttf")
+    format("truetype");
 }
 
-body{
-    box-sizing: border-box;
-    padding: 10px;
-    margin: 0;
-    font-family: 'cascadia', 'arial', sans-serif;
+body {
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0;
+  font-family: "cascadia", "arial", sans-serif;
 }
